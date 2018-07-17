@@ -1,0 +1,20 @@
+<% @user.each do |user| %>
+	<div id="user-profile">
+		<div id="user-image">
+			<img src="<%="/user_images/#{user.image_name}"%>">
+		</div>
+		<div id="user-name">
+			<%= user.name %>
+		</div>
+		<div id="user-nickname">
+			<%= link_to("#{user.nickname}", "/users/#{user.id}/show") %>
+		</div>
+		<div id="user-email">
+			<% if user.email.include?("@") %>
+				<%= user.email %>
+			<% else %>
+				<%= "メアド登録なし" %>
+			<% end %>
+		</div>
+	</div>
+<% end %>

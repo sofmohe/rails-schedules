@@ -1,0 +1,27 @@
+<div id="user-show">
+
+	<img src="<%="/user_images/#{@user.image_name}"%>" id="showprofile-image">
+
+	<div id="showprofile-content">
+		<h4>登録名</h4>
+			<%= @user.name %>
+		<h4>表示名</h4>
+			<%= @user.nickname %>
+		<h4>連絡先</h4>
+			<% if @user.email.include?("@") %>
+				<%= @user.email %>
+			<% else %>
+				<%= "登録なし" %>
+			<% end %>
+		<h4>自己紹介など</h4>
+		<div id="usershow-memo">
+			<%= @user.memo %>
+		</div>
+		<div class="button-edit">
+			<%= button_to "編集", "/users/#{@user.id}/edit", method: :get %>
+		</div>
+		<div class="button-del">
+			<%= button_to "削除", "/users/#{@user.id}/delete", method: :delete %>
+		</div>	
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Schedules</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <%= render 'layouts/shim' %>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+    <script src="moment-ja.js"></script>
+    <script src="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/v4.0.0/src/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('.date').datetimepicker({
+          locale: 'ja',
+          format : 'YYYY-MM-DD HH:mm:ss'
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container" id="content">
+	    <%= yield %>
+    <%= render 'layouts/footer' %>      
+    </div>    
+  </body>
+</html>

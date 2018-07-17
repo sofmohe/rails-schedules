@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  startdate: MyString
+  enddate: MyString
+  name: MyString
+  location: MyString
+  memo: MyText
+  user_id: 1
+
+two:
+  startdate: MyString
+  enddate: MyString
+  name: MyString
+  location: MyString
+  memo: MyText
+  user_id: 1

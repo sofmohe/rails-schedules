@@ -1,0 +1,23 @@
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Schedules App", '/', id:"logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if session[:id] %>
+              <li><%= "てすと" %></li>            
+              <li><%= link_to "#{session[:nickname]}", "/users/#{session[:id]/show}" %></li>
+              <li><%= link_to 'トップ', '/' %></li>              
+              <li><%= link_to 'このサイトについて', '/about' %></li>              
+              <li><%= link_to 'イベント登録', '/events/new' %></li>              
+              <li><%= link_to 'イベント一覧', '/events/index' %></li>
+              <li><%= link_to 'メンバー一覧', '/users/index' %></li>                          
+            <% else %>
+              <li><%= link_to 'トップ', '/' %></li>              
+              <li><%= link_to 'このサイトについて', '/about' %></li>              
+              <li><%= link_to 'ログイン', '/users/login' %></li>            
+              <li><%= link_to 'メンバー登録', '/users/new' %></li>
+            <% end %>              
+          </ul>
+        </nav>
+      </div>
+    </header>
