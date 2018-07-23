@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user
+  before_action :ensure_correct_user, {only: [:edit, :update, :delete]}
+
   def index
     @event = Event.all.order("created_at DESC")
     @event.each do |event|
@@ -15,7 +18,7 @@ class EventsController < ApplicationController
     @event = Event.new
   end
   def create
-    @event = Event.new(startdate: params[:startdate], enddate: params[:enddate], name: params[:name], location: params[:location], memo: params[:memo])
+    @event = Event.new(startdate: params[:startdate], enddate: params[:enddate], name: params[:name], location: params[:location], memo: params[:memo], user_id: @current_user.id)
     if @event.save
       redirect_to("/events/index")
     else
@@ -39,5 +42,11 @@ class EventsController < ApplicationController
     @event = Event.find_by(id: params[:id])
     @event.destroy
     redirect_to("/events/index")
+  end
+  def ensure_correct_user
+    if @event.user_id ==  @current_user.id
+      flash[:notice] = "権限がありません！"
+      redirect_to("events/index")
+    end
   end
 end

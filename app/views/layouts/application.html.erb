@@ -23,10 +23,17 @@
     </script>
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <div class="container" id="content">
-	    <%= yield %>
-    <%= render 'layouts/footer' %>      
-    </div>    
+    <div class="container">
+      <%= render 'layouts/header' %>
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <div id="contents">
+  	    <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>      
+    </div>
   </body>
 </html>

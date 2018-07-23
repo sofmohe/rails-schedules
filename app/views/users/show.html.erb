@@ -13,15 +13,17 @@
 			<% else %>
 				<%= "登録なし" %>
 			<% end %>
-		<h4>自己紹介など</h4>
+		<h4>詳細</h4>
 		<div id="usershow-memo">
 			<%= @user.memo %>
 		</div>
-		<div class="button-edit">
-			<%= button_to "編集", "/users/#{@user.id}/edit", method: :get %>
-		</div>
-		<div class="button-del">
-			<%= button_to "削除", "/users/#{@user.id}/delete", method: :delete %>
-		</div>	
+		<% if @user.id == @current_user.id %>
+			<div class="button-edit">
+				<%= button_to "編集", "/users/#{@user.id}/edit", class: "btn btn-primary", method: :get %>
+			</div>
+			<div class="button-del">
+				<%= button_to "削除", "/users/#{@user.id}/delete", class: "btn btn-primary", method: :delete %>
+			</div>	
+		<% end %>
 	</div>
 </div>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get '/calendar/index' => 'calendar#index'
 
   get '/' => 'home#top'#トップ画面
   get '/home' => 'home#top'
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/home/about' => 'home#about'
 
   post '/users/login' => 'users#login'#ログイン処理
-  post '/users/logout' => 'users#logout'#ログアウト処理
+  get '/users/logout' => 'users#logout'#ログアウト処理
   get '/users/login' => 'users#login_form'#ログインフォーム
   get '/users/index' => 'users#index'#メンバー一覧
   get '/users/:id/show' => 'users#show'#メンバー詳細

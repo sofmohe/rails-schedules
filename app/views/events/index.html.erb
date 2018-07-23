@@ -1,5 +1,5 @@
 <% @event.each do |event| %>
-	<div class="event-content">
+	<div class="event-content">	
 		<div>
 			<%= "内容：" %><%= link_to event.name, "/events/#{event.id}/show" %>
 		</div>
@@ -9,5 +9,5 @@
 		<div>
 			<%= "終了日時：" %><br><%= event.enddate %>
 		</div>
-	</div>		
+	</div>				
 <% end %>

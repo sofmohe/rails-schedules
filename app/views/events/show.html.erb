@@ -3,7 +3,7 @@
 		<h3>イベント詳細</h3>
 	</div>
 	<div>
-		<%= "内容：" + @event.name %>
+		<%= "イベント名：" + @event.name %>
 	</div>
 	<div>
 		<%= "開始日時：" + @event.startdate %>
@@ -17,10 +17,12 @@
 	<div>
 		<%= "メモ：" + @event.memo %>
 	</div>
-	<div class="button-edit">
-		<%= button_to "編集", "/events/#{@event.id}/edit", class: "btn btn-primary", method: :get %>
-	</div>
-	<div class="button-del">
-		<%= button_to "削除", "/events/#{@event.id}/delete", class: "btn btn-primary", method: :delete %>
-	</div>	
+	<% if @event.user_id == @current_user.id %>
+		<div class="button-edit">
+			<%= button_to "編集", "/events/#{@event.id}/edit", class: "btn btn-primary", method: :get %>
+		</div>
+		<div class="button-del">
+			<%= button_to "削除", "/events/#{@event.id}/delete", class: "btn btn-primary", method: :delete %>
+		</div>
+	<% end %>
 </div>

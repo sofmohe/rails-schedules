@@ -2,6 +2,7 @@
 #= require moment
 #= require moment/ja
 #= require bootstrap-datetimepicker
+#= require fullcalendar
 
 
 #$ ->
@@ -31,3 +32,4 @@ $ ->
     #start日より前の日を無効化する
     return
   return
+
