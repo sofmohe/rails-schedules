@@ -1,25 +1,24 @@
-      <header class="navbar navbar-fixed-top navbar-inverse">
-        <nav class="container">        
-        <%= link_to "Schedules App", '/', id:"logo" %>
-
-          <ul class="nav navbar-nav navbar-right">
-            <% if session[:user_id] %>
-              <% current_user_id = session[:user_id] %>
-              <% current_nickname = session[:nickname] %>              
-              <li><%= link_to "#{current_nickname}", "/users/#{current_user_id}/show" %></li>
-              <li><%= link_to 'トップ', '/' %></li>              
-              <li><%= link_to 'このサイトについて', '/about' %></li>              
-              <li><%= link_to 'イベント登録', '/events/new' %></li>              
-              <li><%= link_to 'イベント一覧', '/events/index' %></li>
-              <li><%= link_to 'メンバー一覧', '/users/index' %></li>
-              <li><%= link_to 'ログアウト', '/users/logout' %></li>
-            <% else %>
-              <li><%= link_to 'トップ', '/' %></li>              
-              <li><%= link_to 'このサイトについて', '/about' %></li>              
-              <li><%= link_to 'ログイン', '/users/login' %></li>         
-              <li><%= link_to 'メンバー登録', '/users/new' %></li>
-            <% end %>              
-          </ul>
-        </nav>
-      </header>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <nav class="container">        
+    <%= link_to "Schedules App", '/', id:"logo" %>
+    <ul class="nav navbar-nav navbar-right">
+      <% if session[:user_id] %>
+        <% current_user_id = session[:user_id] %>
+        <% current_nickname = session[:nickname] %>              
+        <li><%= link_to "#{current_nickname}", "/users/#{current_user_id}/show" %></li>
+        <li><%= link_to 'トップ', '/' %></li>              
+        <li><%= link_to 'このサイトについて', '/about' %></li>              
+        <li><%= link_to 'イベント登録', '/events/new' %></li>              
+        <li><%= link_to 'イベント一覧', '/events/index' %></li>
+        <li><%= link_to 'メンバー一覧', '/users/index' %></li>
+        <li><%= link_to 'ログアウト', '/users/logout' %></li>
+      <% else %>
+        <li><%= link_to 'トップ', '/' %></li>              
+        <li><%= link_to 'このサイトについて', '/about' %></li>              
+        <li><%= link_to 'ログイン', '/users/login' %></li>         
+        <li><%= link_to 'メンバー登録', '/users/new' %></li>
+      <% end %>              
+    </ul>
+  </nav>
+</header>
     
