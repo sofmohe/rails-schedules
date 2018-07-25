@@ -1,6 +1,6 @@
-      <header class="navbar navbar-fixed-top navbar-inverse container">
+      <header class="navbar navbar-fixed-top navbar-inverse">
         <%= link_to "Schedules App", '/', id:"logo" %>
-        <nav>
+        <nav class="container">
           <ul class="nav navbar-nav navbar-right">
             <% if session[:user_id] %>
               <% current_user_id = session[:user_id] %>
